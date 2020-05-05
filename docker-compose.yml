@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+    server:
+        container_name: the_black_codes_directory
+        build:
+            context: .
+            dockerfile: ./docker/dev.Dockerfile
+        volumes:
+            - .:/usr/src/app
+        ports:
+            - '8000:8000'
