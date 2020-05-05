@@ -14,3 +14,4 @@ tab_width = 4
 
 [*.md]
 trim_trailing_whitespace = false
+

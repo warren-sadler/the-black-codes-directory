@@ -3,5 +3,10 @@
  *
  * Main.ts operates as the entry point to our application.
  */
+import { app } from './core';
 
-console.log('Hello World!');
+const PORT = 8000;
+
+app.listen(PORT, () => {
+    console.log(`✨Server running on port ${PORT} 🚀`);
+});
