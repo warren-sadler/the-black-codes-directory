@@ -1,11 +1,21 @@
 version: '3.3'
 services:
     server:
+        depends_on:
+            - database
         container_name: the_black_codes_directory
         build:
-            context: .
-            dockerfile: ./docker/dev.Dockerfile
+            context: ./docker
+            dockerfile: dev.Dockerfile
         volumes:
             - .:/usr/src/app
         ports:
             - '8000:8000'
+    database:
+        env_file: .database.env
+        container_name: the_black_codes_directory_database
+        build:
+            context: ./docker
+            dockerfile: db.Dockerfile
+        ports:
+            - '5432:5432'
