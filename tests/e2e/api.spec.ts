@@ -4,9 +4,9 @@
  * Tests to assert the top-level api of The Black Codes Directory
  */
 import supertest from 'supertest';
-import { app } from '../../src/core';
+import { testApp } from '../setup';
 
-const theBlackCodesDirectoryApi = supertest(app);
+const theBlackCodesDirectoryApi = supertest(testApp);
 
 describe('The Black Codes Directory API', () => {
     describe('GET /', () => {

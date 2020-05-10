@@ -1,0 +1,1 @@
+export { mountStatusRouter } from './router';
