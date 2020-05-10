@@ -2,5 +2,7 @@
 
 ## Appendix
 
+-   Core
+    -   [Configuration](./core/configuration.md)
 -   Technologies
     -   [Express](./technologies/express.md)

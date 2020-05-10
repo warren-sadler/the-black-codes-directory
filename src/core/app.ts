@@ -5,9 +5,20 @@
  * instance generation.
  */
 
-import express from 'express';
+import express, { Application } from 'express';
+import { IConfig } from './configuration';
 
-export const app = express();
-app.use('/', (req, res) => {
-    res.status(200).json('Hello from The Black Codes');
-});
+/**
+ *
+ * @param config
+ */
+export function buildApplication(config: IConfig): Application {
+    const app = express();
+    config.MIDDLEWARE.forEach((middleware) => {
+        app.use(middleware);
+    });
+    config.ROUTERS.forEach((router) => {
+        router(app);
+    });
+    return app;
+}
